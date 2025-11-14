@@ -25,18 +25,19 @@ export default function Projects() {
   return (
     <div className="grid gap-6 sm:grid-cols-2">
       {projects.map((p) => (
-        <div key={p.title} className="rounded-2xl bg-white p-6 shadow ring-1 ring-black/5">
-          <div className="flex items-center justify-between">
-            <h3 className="text-lg font-semibold text-gray-900">{p.title}</h3>
+        <div key={p.title} className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl p-6 shadow ring-1 ring-black/5 dark:ring-white/10">
+          <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-gradient-to-br from-rose-400/40 to-amber-400/40 blur-2xl transition-all group-hover:scale-125" />
+          <div className="flex items-center justify-between relative">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{p.title}</h3>
             <div className="flex flex-wrap gap-1 justify-end max-w-[60%]">
               {p.stack.map((t) => (
-                <span key={t} className="text-[10px] rounded-full bg-blue-50 text-blue-700 px-2 py-1 font-semibold ring-1 ring-blue-200">
+                <span key={t} className="text-[10px] rounded-full bg-sky-50 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300 px-2 py-1 font-semibold ring-1 ring-sky-200 dark:ring-sky-700/40">
                   {t}
                 </span>
               ))}
             </div>
           </div>
-          <p className="mt-3 text-sm text-gray-600">{p.desc}</p>
+          <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">{p.desc}</p>
         </div>
       ))}
     </div>
